@@ -23,6 +23,7 @@ class BackupConfigs:
 
     def __init__(self):
         self.__config_path = fr"./backup.config"
+        self.__ensure_config_existance()
 
 
     def load_settings(self):

@@ -43,4 +43,5 @@ class BackupCreator(BackupConfigs):
                 self.__logger.log(f"Backed up {path} into {self.__backup_path}.")
 
         if self.__settings["backup_restart"] == "True":
+            self.__logger.log("Shutting the computer down...", "WARN")
             os.system("shutdown -s -t 0")
