@@ -35,12 +35,17 @@ class BackupCreator(BackupConfigs):
         :return:
         """
 
+        self.__logger.log("Starting backups...")
         with py7zr.SevenZipFile(self.__backup_path, "w") as archive:
 
             # Adds all the paths in the folders setting to the 7z file.
             for path in self.__settings["backup_folders"]:
-                archive.writeall(path)
-                self.__logger.log(f"Backed up {path} into {self.__backup_path}.")
+
+                for root, _, files in os.walk(path):
+                    for file in files:
+                        filepath = os.path.join(root, file)
+                        archive.writeall(filepath)
+                        self.__logger.log(f"Backed up {filepath} into {self.__backup_path}.")
 
         if self.__settings["backup_restart"] == "True":
             self.__logger.log("Shutting the computer down...", "WARN")
