@@ -6,4 +6,4 @@ BACKUP_RESTART = False
 BACKUP_FOLDERS = C:\;
 
 // This setting controls the path for where the backups will go to.
-BACKUP_PATH = "C:\Backups"
+BACKUP_PATH = C:\Backups
