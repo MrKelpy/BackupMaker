@@ -41,3 +41,6 @@ class BackupCreator(BackupConfigs):
             for path in self.__settings["backup_folders"]:
                 archive.writeall(path)
                 self.__logger.log(f"Backed up {path} into {self.__backup_path}.")
+
+        if self.__settings["backup_restart"] == "True":
+            os.system("shutdown -s -t 0")
