@@ -1,0 +1,9 @@
+// This setting controls whether the computer should restart after the backup is complete.
+BACKUP_RESTART = False
+
+// This setting tells the program which folders should be backed up.
+// Insert the path to each folder here. To separate folders, add a semicolon (;) after each path.
+BACKUP_FOLDERS = C:\;
+
+// This setting controls the path for where the backups will go to.
+BACKUP_PATH = "C:\Backups"
